@@ -11,13 +11,18 @@ namespace FormMultiInsert.Models
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
+
     public partial class Email
     {
+        [Key]
         public int Id { get; set; }
         public int UserId { get; set; }
         public string EmailAddress { get; set; }
     
+        [ForeignKey("UserId")]
         public virtual User User { get; set; }
     }
 }

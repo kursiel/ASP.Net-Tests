@@ -11,6 +11,9 @@ namespace FormMultiInsert.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
+    using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     
     public partial class User
     {
@@ -20,6 +23,7 @@ namespace FormMultiInsert.Models
             this.Emails = new HashSet<Email>();
         }
     
+        [Key]
         public int Id { get; set; }
         public string Username { get; set; }
         public string Password { get; set; }
